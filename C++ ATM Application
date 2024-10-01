@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+void show_Menu()
+{
+  cout << "******Menu*****" << endl;
+  cout << "1. Check Balance" << endl;
+  cout << "2. Deposit Funds" << endl;
+  cout << "3. Withdraw Funds" << endl;
+  cout << "4. Cancel Transaction" << endl;
+  
+}
+
+int main()
+{
+     
+      //Check Balance, Deposit funds, Withdraw funds, Show Menu, or cancel transaction
+      int option;
+      double current_Balance = 500.00;
+      double deposit_Amount = 0.0;
+      show_Menu();
+      
+      cout << "Hello there. Please, choose your Option: " << endl;
+      cin >> option;
+      
+      switch (option) {
+        case 1: cout << "Your current balance is: " << current_Balance << "$" << endl; 
+        break;
+        case 2: cout << "Deposit Funds: " << endl,
+        
+        cin >> deposit_Amount;
+        current_Balance += deposit_Amount;
+        cout << "Your current balance is now: " << current_Balance << endl;
+        break;
+        case 3: cout << "Withdraw Funds: " << endl;
+        double withdraw_Amount;
+        cin >> withdraw_Amount;
+        if (withdraw_Amount > current_Balance)
+ 
+        cout << "You have insufficient funds" << endl;
+        else if (current_Balance > withdraw_Amount)
+        withdraw_Amount -= current_Balance;
+        cout << "Your current balance is now: " << withdraw_Amount << endl;
+        break;
+        case 4: cout << "Thank you for your service. Have a great day! " << endl;
+        break;
+        
+        default:
+          cout << "You have chosen an invalid option. Please try again" << endl;
+          
+      }
+     
+}
